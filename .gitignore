@@ -1,0 +1,91 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# PyTorch and Hugging Face model checkpoints
+models/checkpoint-*/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.h5
+
+# Keep the final fine-tuned model
+!models/fine_tuned_distilbert/
+!models/fine_tuned_distilbert/**
+
+# Exclude backup and experimental checkpoints
+models/fine_tuned_distilbert_backup/
+models/fine_tuned_distilbert_candidate/
+# Hugging Face cache & datasets cache
+.cache/
+hf_cache/
+
+# Streamlit config & secrets
+.streamlit/secrets.toml
+
+# macOS metadata
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output evaluation artifacts produced by training (keep README.md tracked)
+results/*.png
+results/*.json
+results/*.txt
+!results/README.md
+!models/README.md
+# Model backups and experimental checkpoints
+models/fine_tuned_distilbert_backup/
+models/fine_tuned_distilbert_candidate/
+
+# Python virtual environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+# NLTK resources are downloaded locally when needed
+nltk_data/

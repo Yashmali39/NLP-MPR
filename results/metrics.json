@@ -1,0 +1,196 @@
+{
+  "dataset": "PAWS (labeled_final)",
+  "base_model": "distilbert/distilbert-base-uncased",
+  "device": "mps",
+  "training_metadata": {
+    "train_samples": 8000,
+    "val_samples": 1000,
+    "test_samples": 1000,
+    "epochs_trained": 3,
+    "best_epoch": 3,
+    "batch_size": 32,
+    "max_length": 128,
+    "learning_rate": 3e-05,
+    "training_duration_seconds": 1785.72,
+    "loss_history": {
+      "epochs": [
+        1,
+        2,
+        3
+      ],
+      "train_losses": [
+        0.6906,
+        0.6521,
+        0.5126
+      ],
+      "val_losses": [
+        0.6811,
+        0.6613,
+        0.6187
+      ],
+      "val_accuracies": [
+        0.579,
+        0.594,
+        0.647
+      ],
+      "val_macro_f1s": [
+        0.5221,
+        0.5902,
+        0.6465
+      ],
+      "val_recall_0s": [
+        0.828,
+        0.4462,
+        0.5448
+      ],
+      "val_recall_1s": [
+        0.2647,
+        0.7805,
+        0.776
+      ]
+    }
+  },
+  "distilbert_evaluation": {
+    "accuracy": 0.646,
+    "binary_precision": 0.5707,
+    "binary_recall": 0.7959,
+    "binary_f1": 0.6648,
+    "macro_f1": 0.6449,
+    "weighted_f1": 0.6425,
+    "roc_auc": 0.7373,
+    "per_class_metrics": {
+      "not_paraphrase": {
+        "precision": 0.7662,
+        "recall": 0.5277,
+        "f1_score": 0.625
+      },
+      "paraphrase": {
+        "precision": 0.5707,
+        "recall": 0.7959,
+        "f1_score": 0.6648
+      }
+    },
+    "class_distributions": {
+      "test_ground_truth": {
+        "not_paraphrase": 559,
+        "paraphrase": 441
+      },
+      "predicted_classes": {
+        "not_paraphrase": 385,
+        "paraphrase": 615
+      }
+    },
+    "inference_latency_ms": 20.93,
+    "confusion_matrix": {
+      "true_negatives": 295,
+      "false_positives": 264,
+      "false_negatives": 90,
+      "true_positives": 351
+    }
+  },
+  "tfidf_baseline_comparison": {
+    "baseline_name": "TF-IDF + Logistic Regression",
+    "accuracy": 0.571,
+    "precision": 0.5789,
+    "recall": 0.0998,
+    "f1_score": 0.1702
+  },
+  "supplementary_bertscore": {
+    "status": "success",
+    "model_type": "distilbert-base-uncased",
+    "sample_size": 100,
+    "mean_precision": 0.97,
+    "mean_recall": 0.9701,
+    "mean_f1": 0.97
+  },
+  "sanity_test_results": [
+    {
+      "test_id": "Test A",
+      "name": "Identical Text",
+      "text_a": "Artificial intelligence can process natural language.",
+      "text_b": "Artificial intelligence can process natural language.",
+      "expected_label": "Paraphrase",
+      "predicted_label": "Not Paraphrase",
+      "prob_not_paraphrase": 0.6392,
+      "prob_paraphrase": 0.3608,
+      "is_correct": false
+    },
+    {
+      "test_id": "Test B",
+      "name": "Clear Lexical Paraphrase",
+      "text_a": "The company announced a new product yesterday.",
+      "text_b": "Yesterday, the company revealed its latest product.",
+      "expected_label": "Paraphrase",
+      "predicted_label": "Paraphrase",
+      "prob_not_paraphrase": 0.4786,
+      "prob_paraphrase": 0.5214,
+      "is_correct": true
+    },
+    {
+      "test_id": "Test C",
+      "name": "Reversed Subject/Object",
+      "text_a": "The police officer arrested the criminal.",
+      "text_b": "The criminal arrested the police officer.",
+      "expected_label": "Not Paraphrase",
+      "predicted_label": "Not Paraphrase",
+      "prob_not_paraphrase": 0.6789,
+      "prob_paraphrase": 0.3211,
+      "is_correct": true
+    },
+    {
+      "test_id": "Test D",
+      "name": "Different Meanings",
+      "text_a": "The weather is sunny today.",
+      "text_b": "The database server requires additional memory.",
+      "expected_label": "Not Paraphrase",
+      "predicted_label": "Paraphrase",
+      "prob_not_paraphrase": 0.4295,
+      "prob_paraphrase": 0.5705,
+      "is_correct": false
+    },
+    {
+      "test_id": "PAWS-Pos-2774",
+      "name": "PAWS Ground-Truth Paraphrase",
+      "text_a": "Hannah Willard married Simon Willard on November 29 , 1776 .",
+      "text_b": "Simon Willard married Hannah Willard on 29 November 1776 .",
+      "expected_label": "Paraphrase",
+      "predicted_label": "Paraphrase",
+      "prob_not_paraphrase": 0.1052,
+      "prob_paraphrase": 0.8948,
+      "is_correct": true
+    },
+    {
+      "test_id": "PAWS-Pos-6708",
+      "name": "PAWS Ground-Truth Paraphrase",
+      "text_a": "Brenda Schultz won 7 -- 6 , 7 -- 6 against Helena Sukov\u00e1 in the final ...",
+      "text_b": "Brenda Schultz won in the final 7 -- 6 , 7 -- 6 against Helena Sukov\u00e1 ...",
+      "expected_label": "Paraphrase",
+      "predicted_label": "Paraphrase",
+      "prob_not_paraphrase": 0.1,
+      "prob_paraphrase": 0.9,
+      "is_correct": true
+    },
+    {
+      "test_id": "PAWS-Neg-2125",
+      "name": "PAWS Ground-Truth Non-Paraphrase",
+      "text_a": "Having played for Millwall , Clapton Orient and Chelmsford City in Ita...",
+      "text_b": "After playing for Millwall , Clapton Orient and Chelmsford City in Eng...",
+      "expected_label": "Not Paraphrase",
+      "predicted_label": "Paraphrase",
+      "prob_not_paraphrase": 0.2232,
+      "prob_paraphrase": 0.7768,
+      "is_correct": false
+    },
+    {
+      "test_id": "PAWS-Neg-115",
+      "name": "PAWS Ground-Truth Non-Paraphrase",
+      "text_a": "Lillian `` Lilly '' Truscott ( Emily Osment ) is the best girlfriend o...",
+      "text_b": "Lillian `` Lilly '' Truscott ( Oliver Oken ) is the best girlfriend of...",
+      "expected_label": "Not Paraphrase",
+      "predicted_label": "Paraphrase",
+      "prob_not_paraphrase": 0.4288,
+      "prob_paraphrase": 0.5712,
+      "is_correct": false
+    }
+  ]
+}

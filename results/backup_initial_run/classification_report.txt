@@ -1,0 +1,8 @@
+                precision    recall  f1-score   support
+
+Not Paraphrase     0.5884    0.9943    0.7393       174
+    Paraphrase     0.8333    0.0397    0.0758       126
+
+      accuracy                         0.5933       300
+     macro avg     0.7109    0.5170    0.4075       300
+  weighted avg     0.6913    0.5933    0.4606       300

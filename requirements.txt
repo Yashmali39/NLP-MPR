@@ -1,0 +1,30 @@
+# AI-Powered Plagiarism and Paraphrase Detection System Using Fine-Tuned DistilBERT
+# Core Deep Learning & NLP Requirements
+
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+evaluate>=0.4.0
+accelerate>=0.24.0
+
+# Scientific Computing & Traditional Machine Learning
+scikit-learn>=1.2.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Preprocessing & Natural Language Toolkits
+nltk>=3.8.1
+
+# Supplementary Semantic Evaluation
+bert-score>=0.3.13
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Interactive Application Interface
+streamlit>=1.28.0
+
+# Utilities
+tqdm>=4.65.0
+joblib>=1.3.0
